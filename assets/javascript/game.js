@@ -27,15 +27,17 @@ function setNumbers(){
     crystalValue.push(Math.round(numberOptions));
     console.log("Crystal Value first: " + crystalValue);
   }
-  // Assign the random values to the crystal images
+  // Assign random values to the crystal images
   $("#button1").attr("value", crystalValue[0]);
   $("#button2").attr("value", crystalValue[1]);
   $("#button3").attr("value", crystalValue[2]);
   $("#button4").attr("value", crystalValue[3]); 
-  console.log("button vlalues are: " + crystalValue);  
+  console.log("button values are: " + crystalValue);  
 }
 setNumbers();
 
+// Create onclick event to capture the image value 
+// Add the value to the current score until the user reaches targetNumber
 $(".crystal-image").on("click", function() {
   console.log("This button value is" + $(this).attr("value"));
   currentScore = currentScore + (Number($(this).attr("value")));
